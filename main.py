@@ -1,28 +1,28 @@
 from JegyFoglalas import JegyFoglalas
 from adatFeltoltes import adatFeltoltesJaratok, adatFeltoltesJegyFoglalas, adatFeltoltesLegitarsasagok
 from megejelnites import alapFejlec, kepernyoMenu, alapLablec
-from muveletek import jaratLista, foglalasLista, foglalas, torolFoglalas
+from muveletek import jaratLista, foglalasLista, foglalas, torolFoglalas, torolKepernyo
 
 foglalasok = adatFeltoltesJegyFoglalas()
 legitarsasagok = adatFeltoltesLegitarsasagok()
 jaratok = adatFeltoltesJaratok()
-
+torolKepernyo()
 alapFejlec("Repülőjegy Foglalási Rendszer")
 felhasznalo = input("Felhasználó név: " )
 while True:
-    #torolKepernyo():
+    torolKepernyo()
     alapFejlec("Repülőjegy Foglalási Rendszer")
     kepernyoMenu(felhasznalo)
     alapLablec(felhasznalo)
     valasztas = input(f"Válassz egy menüpontot {felhasznalo}(1-5): ")
     if valasztas=="1":
-        #torolKepernyo():
+        torolKepernyo()
         alapFejlec("Repülő járatok")
         jaratLista(jaratok,legitarsasagok)
         alapLablec(felhasznalo)
         input("\n A folytatáshoz nyomd meg az ENTER gombot...")
     elif valasztas=="2":
-        #torolKepernyo():
+        torolKepernyo()
         alapFejlec("Foglalás")
         jaratLista(jaratok,legitarsasagok)
         alapLablec(felhasznalo)
@@ -31,13 +31,13 @@ while True:
         print("A foglalás sikeres!")
         input("\n A folytatáshoz nyomd meg az ENTER gombot...")
     elif valasztas=="3":
-        #torolKepernyo():
+        torolKepernyo()
         alapFejlec("Törlés")
         foglalasLista(jaratok,legitarsasagok,foglalasok)
         sorszam = int(input("Add meg a törölni kívánt foglalás sorszámát: "))
         torolFoglalas(foglalasok, sorszam, felhasznalo)
     elif valasztas=="4":
-        #torolKepernyo():
+        torolKepernyo()
         alapFejlec("Foglalások")
         foglalasLista(jaratok,legitarsasagok,foglalasok)
         alapLablec(felhasznalo)
