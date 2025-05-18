@@ -1,0 +1,20 @@
+def alapFejlec(szoveg):
+        print("="*120)
+        print("")   
+        print(szoveg.center(120," "))
+        print("")
+        print("="*120)
+def alapLablec(felhasznalo):
+        print("-"*120)
+        print(f"Bejelentkezett felhasználó: {felhasznalo}")
+        print("-"*120)
+def kepernyoMenu(felhasznalo):
+        print("")
+        print("Menü".center(120," "))
+        print("")
+        print("1. Járatok listázása".center(120," "))
+        print("2. Foglalás".center(120," "))
+        print("3. Foglalás lemondása".center(120," "))
+        print("4. Foglalások listázása".center(120," "))
+        print("5. Kilépés".center(120," "))
+        print("")
