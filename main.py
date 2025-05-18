@@ -22,14 +22,20 @@ while True:
         alapLablec(felhasznalo)
         input("\n A folytatáshoz nyomd meg az ENTER gombot...")
     elif valasztas=="2":
-        torolKepernyo()
-        alapFejlec("Foglalás")
-        jaratLista(jaratok,legitarsasagok)
-        alapLablec(felhasznalo)
-        datum, jaratszam = foglalas(jaratok)
-        foglalasok.append(JegyFoglalas(jaratszam,felhasznalo,datum))
-        print("A foglalás sikeres!")
-        input("\n A folytatáshoz nyomd meg az ENTER gombot...")
+        while True:
+            torolKepernyo()
+            alapFejlec("Foglalás")
+            jaratLista(jaratok,legitarsasagok)
+            alapLablec(felhasznalo)
+            datum, jaratszam = foglalas(jaratok)
+            foglalasok.append(JegyFoglalas(jaratszam,felhasznalo,datum))
+            print("A foglalás sikeres!")
+            muvelet=input("Szeretnél egy másik foglalást ? (I/N): ")
+            if (muvelet=='n') or (muvelet=='N'):
+                break
+            else:
+                if muvelet !='i' or muvelet !='I':
+                    print("Nem megfelelő karaktert adtál meg!")
     elif valasztas=="3":
         while True:
             torolKepernyo()
