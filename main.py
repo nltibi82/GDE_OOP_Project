@@ -31,11 +31,18 @@ while True:
         print("A foglalás sikeres!")
         input("\n A folytatáshoz nyomd meg az ENTER gombot...")
     elif valasztas=="3":
-        torolKepernyo()
-        alapFejlec("Törlés")
-        foglalasLista(jaratok,legitarsasagok,foglalasok)
-        sorszam = int(input("Add meg a törölni kívánt foglalás sorszámát: "))
-        torolFoglalas(foglalasok, sorszam, felhasznalo)
+        while True:
+            torolKepernyo()
+            alapFejlec("Törlés")
+            foglalasLista(jaratok,legitarsasagok,foglalasok)
+            sorszam = int(input("Add meg a törölni kívánt foglalás sorszámát: "))
+            torolFoglalas(foglalasok, sorszam, felhasznalo)
+            muvelet=input("Szeretnél egy másik foglalást törölni? (I/N): ")
+            if (muvelet=='n') or (muvelet=='N'):
+                break
+            else:
+                if muvelet !='i' or muvelet !='I':
+                    print("Nem megfelelő karaktert adtál meg!")
     elif valasztas=="4":
         torolKepernyo()
         alapFejlec("Foglalások")
